@@ -1,0 +1,36 @@
+.container{
+    width: 100%;
+    background-color: #F3EDF7;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.C1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 5%;
+}
+
+.C2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+}
+
+.C3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 5%;
+}
+
+.h5{
+    margin: 0;
+
+}
