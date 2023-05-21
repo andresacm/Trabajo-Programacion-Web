@@ -3,17 +3,31 @@
 import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
-
+import {useState} from "react"
 
 const pantallaPDocente = () =>{
 
+    const [topBarIsVisible, setTopBarIsVisible] = useState(true);
+
+    function swapTopBar()
+    {
+        setTopBarIsVisible(!topBarIsVisible)
+    }
+
+    let leftBarContent
+
+    if (topBarIsVisible)
+    {
+        leftBarContent = <LeftBar/>
+    }
+
     return(
         <div className={styles.container}>
-            <TopBar></TopBar>
+            <TopBar onButtonClick={swapTopBar}></TopBar>
             <div className={styles.main}>
-                <LeftBar></LeftBar>
+                {leftBarContent}
                 <div className={styles.contenido}>
-                    {/* ESCRIBIR CODIGO AQUI O.O */}
+                    {"aaa"}
                 </div>
             </div>
                       
