@@ -7,6 +7,8 @@ import {useState} from "react"
 import Button from "react-bootstrap/Button"
 import Input from '@/components/Input/Input'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 
 const pantallaPerfil = () =>{
@@ -41,48 +43,21 @@ const pantallaPerfil = () =>{
         leftBarContent = <LeftBar/>
     }
 
-    let contenido
-
-    if (contendoIsVisible==="DU")
-    {
-        contenido = (
-            <>
-            <Input namew='Usuario'></Input>
-            <br></br>
-            <Input namew='Constrasena Actual'></Input>
-            <Input namew='Nueva Contrasena'></Input>
-            <Input namew='Repetir Contrasena'></Input>
-            </>)           
-        
-    }
-    else if(contendoIsVisible==="U")
-    {
-        contenido =(             
-        <>
-        <Input namew='Universidad'></Input>
-        <Input namew='Carrera'></Input>
-        <Input namew='Agregar Cursos'></Input>
-        </>)         
-    }
-    else
-    {
-        contenido = (             
-            <>
-            <Input namew='Titulo'></Input>
-            <Input namew='Presentacion'></Input>
-            </>)        
-    }
-
     return(
         <div className={styles.container}>
             <TopBar onButtonClick={swapTopBar}></TopBar>
             <div className={styles.main}>
                 {leftBarContent}
+                
                 <div className={styles.contenido}>
+                    <div className={styles.containerTop}>
                     <div className={styles.containerTitulo}>
                         <h1 className={styles.titulo}>Mi Perfil</h1>
+                    </div>
+                    <div className={styles.containerBoton}>
+                        <Button>Cancelar</Button>
                         <Button>Guardar</Button>
-                        
+                    </div>
                     </div>
                     <div className={styles.linea}></div>
                     <div>
@@ -98,13 +73,35 @@ const pantallaPerfil = () =>{
                         <Input namew='Numero'></Input>
                         
                     </div>
-                    <ButtonGroup className="mb-2">
-                        <Button onClick={swapContenidoDU}>Datos de Usuario</Button>
-                        <Button onClick={swapContenidoU}>Universidad</Button>
-                        <Button onClick={swapContenidoP}>Presentacion</Button>
-                    </ButtonGroup>
                     <br></br>
-                    {contenido}
+                    <Tabs
+                    defaultActiveKey="datos_usuario"
+                    id="uncontrolled-tab-example"
+                    className="mb-3"
+                    >
+                    <Tab eventKey="datos_usuario" title="Datos de usuario">
+                    <>
+                        <Input namew='Usuario'></Input>
+                        <br></br>
+                        <Input namew='Constrasena Actual'></Input>
+                        <Input namew='Nueva Contrasena'></Input>
+                        <Input namew='Repetir Contrasena'></Input>
+                    </>
+                    </Tab>
+                    <Tab eventKey="univerisdad" title="Universidad">
+                        <>
+                        <Input namew='Universidad'></Input>
+                        <Input namew='Carrera'></Input>
+                        <Input namew='Agregar Cursos'></Input>
+                        </>
+                    </Tab>
+                    <Tab eventKey="presentacion" title="Presentacion">
+                    <>
+                        <Input namew='Titulo'></Input>
+                        <Input namew='Presentacion'></Input>
+                    </>
+                    </Tab>
+                    </Tabs>
                 </div>
             </div>
                       

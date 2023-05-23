@@ -24,10 +24,22 @@
     margin: 0px;
 }
 
+.containerTop
+{
+    display: flex;
+}
+
 .containerTitulo
+{
+    justify-content: left;
+    width: 88%;    
+}
+
+.containerBoton
 {
     display: flex;
     justify-content: space-between;
+    width: 12%;
 }
 
 .titulo2
