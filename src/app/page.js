@@ -7,6 +7,11 @@ import { useRouter } from 'next/navigation'
 
 export default function Home() {
   
+  const nano = () => 
+  {
+    
+  }
+
   const [usuario, setUsuario] = useState('');  
   const [password, setPassword] = useState('');  
 

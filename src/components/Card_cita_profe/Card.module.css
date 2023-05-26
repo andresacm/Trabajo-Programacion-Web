@@ -1,0 +1,19 @@
+.imagen
+{
+    display: inline;
+    float: left;
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.nombre
+{
+    width: 500px;
+    margin-right: 100px;
+}
+
+.boton {
+    float: right;
+    color: #6750A4;
+    background-color: #FEF7FF;
+}
