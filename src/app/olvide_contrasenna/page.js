@@ -14,7 +14,7 @@ const olvideContrasenna = () =>{
             <h1 className={styles.titulo}>Sistema de citas para antecion a estudiantes</h1>
             <p className={styles.parrafo}>Escribir correo electronico para poder enviar las indicaciones a seguir para proporcionarle una nueva contraseña</p>
             <Input namew = "Usuario o Correo"></Input>
-            <button className={styles.enviar} onClick={router.push('/')}> Enviar </button>
+            <button className={styles.enviar} onClick={() => router.push('/')}> Enviar </button>
         </div>
         
     )

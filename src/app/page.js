@@ -30,7 +30,7 @@ export default function Home() {
 
     
     <main className={styles.container}>
-      <h1 className={styles.titulo}>Sistema de citas para antecion a estudiantes</h1>
+      <h1 className={styles.titulo}>Sistema de citas para atención a estudiantes</h1>
       <form>
       
         <div className={styles.form_box}>
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
 
       </form>
-      <p className={styles.parrafo}><Link className={styles.lnk} href='/pantalla_registro' text="Registro de nuevo usuario">Registro de nuevo usuario</Link> - <Link className={styles.lnk} href='/' text="Olvidé mi contraseña" >Olvidé mi contraseña</Link> </p>
+      <p className={styles.parrafo}><Link className={styles.lnk} href='/pantalla_registro' text="Registro de nuevo usuario">Registro de nuevo usuario</Link> - <Link className={styles.lnk} href='/olvide_contrasenna' text="Olvidé mi contraseña" >Olvidé mi contraseña</Link> </p>
       <div className={styles.btn}>
         <div className={styles.a}>
             <button className={styles.salir}>Salir</button> <button className={styles.ingresar} onClick={handleClick}> Ingresar </button>

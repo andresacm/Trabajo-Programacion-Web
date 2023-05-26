@@ -51,29 +51,38 @@ const pantallaPerfil = () =>{
                 
                 <div className={styles.contenido}>
                     <div className={styles.containerTop}>
-                    <div className={styles.containerTitulo}>
-                        <h1 className={styles.titulo}>Mi Perfil</h1>
-                    </div>
-                    <div className={styles.containerBoton}>
-                        <Button>Cancelar</Button>
-                        <Button>Guardar</Button>
-                    </div>
+                        <div className={styles.containerTitulo}>
+                            <h1 className={styles.titulo}>Mi Perfil</h1>
+                        </div>
+                        <div className={styles.containerBoton}>
+                            <Button>Cancelar</Button>
+                        </div>    
+                        <div className={styles.containerBoton}>
+                            <Button>Guardar</Button>
+                        </div>
                     </div>
                     <div className={styles.linea}></div>
                     <div>
-                    <h2 className={styles.titulo2}>Informacion Personal</h2>
+                        <h2 className={styles.titulo2}>Informacion Personal</h2>
                     </div>
-                    <div className={styles.input1}>
-                        <Input namew='Nombres'></Input>
-                        <Input namew='Apellidos'></Input>
-                        <Input namew='Tipo de Documento'></Input>
+                    <div className={styles.infoPersonal}>
+                        <div className={styles.inputs}>
+                            <div className={styles.input1}>
+                                <Input namew='Nombres'></Input>
+                                <Input namew='Apellidos'></Input>
+                                <Input namew='Tipo de Documento'></Input>
+                            </div>
+                            <div className={styles.input1}>
+                                <Input namew='Rol'></Input>
+                                <Input namew='Numero'></Input>
+                            </div>
+                        </div>
+                        <div className={styles.fotoPerfil}>
+                            <p style={{alignContent: 'center'}}>fotito</p>
+                        </div>
                     </div>
-                    <div className={styles.input1}>
-                        <Input namew='Rol'></Input>
-                        <Input namew='Numero'></Input>
-                        
-                    </div>
-                    <br></br>
+                    
+                    
                     <Tabs
                     defaultActiveKey="datos_usuario"
                     id="uncontrolled-tab-example"
@@ -81,24 +90,35 @@ const pantallaPerfil = () =>{
                     >
                     <Tab eventKey="datos_usuario" title="Datos de usuario">
                     <>
-                        <Input namew='Usuario'></Input>
-                        <br></br>
-                        <Input namew='Constrasena Actual'></Input>
-                        <Input namew='Nueva Contrasena'></Input>
-                        <Input namew='Repetir Contrasena'></Input>
+                        <div className={styles.DataUsuario}>
+                            <Input namew='Usuario'></Input>
+                        </div>
+                        <div className={styles.DataUsuario}>
+                            <Input namew='Constrasena Actual'></Input>
+                            <Input namew='Nueva Contrasena'></Input>
+                            <Input namew='Repetir Contrasena'></Input>
+                        </div>
                     </>
                     </Tab>
                     <Tab eventKey="univerisdad" title="Universidad">
                         <>
+                        <div className={styles.DataUsuario}>
                         <Input namew='Universidad'></Input>
+                        <Input namew='Agregar Curso'></Input>
+                        </div>
+                        <div className={styles.DataUsuario}>
                         <Input namew='Carrera'></Input>
-                        <Input namew='Agregar Cursos'></Input>
+                        </div>
                         </>
                     </Tab>
                     <Tab eventKey="presentacion" title="Presentacion">
                     <>
+                    <div className={styles.DataUsuario}>
                         <Input namew='Titulo'></Input>
+                    </div>
+                    <div className={styles.DataUsuario}>
                         <Input namew='Presentacion'></Input>
+                    </div>
                     </>
                     </Tab>
                     </Tabs>

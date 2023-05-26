@@ -7,6 +7,7 @@ import {useState} from "react"
 import Button from "react-bootstrap/Button"
 import Input from '@/components/Input/Input'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Citas from '@/components/Citas/Citas'
 
 
 const pantallaPerfil = () =>{
@@ -91,7 +92,13 @@ const pantallaPerfil = () =>{
                         <Input namew='Hora Inicio'></Input>
                         <Input namew='Hora Fin'></Input>
                         <Input namew='Enlace de Sesion'></Input>
-                        <Button>Agregar</Button>
+                        <div style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems:'center', paddingBottom: '20px'}}>
+                            <Button>Agregar</Button>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <Citas/>
                     </div>
                 </div>
             </div>

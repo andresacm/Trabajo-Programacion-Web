@@ -1,0 +1,30 @@
+.container{
+
+    background-color: #FEF7FF;
+    height: 56px;
+    width: 909px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.circulo{
+    background-color: #EADDFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numero{
+    margin: 0;
+    font-style: #21005D;
+}
+
+.fecha{
+
+    width: 800px;
+    padding-left: 20px;
+}

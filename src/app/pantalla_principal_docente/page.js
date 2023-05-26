@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
 import {useState} from "react"
+import Button from "react-bootstrap/Button"
 
 const pantallaPDocente = () =>{
 
@@ -27,7 +28,18 @@ const pantallaPDocente = () =>{
             <div className={styles.main}>
                 {leftBarContent}
                 <div className={styles.contenido}>
-                    {"aaa"}
+                    <div className={styles.containerTop}>
+                        <div className={styles.containerTitulo}>
+                            <h1 className={styles.titulo}>Bienvenido, Profesor Juan</h1>
+                        </div>
+                    </div>
+                    <div className={styles.linea}></div>
+                    <div className={styles.citas}>
+                        
+                    </div>
+                    <div className={styles.citas}>
+
+                    </div>
                 </div>
             </div>
                       
