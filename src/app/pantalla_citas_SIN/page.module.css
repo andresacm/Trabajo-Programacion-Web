@@ -1,0 +1,65 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+
+    height: 100%;
+    display: flex;
+}
+
+.contenido{
+
+    width: 100%;
+    padding: 2rem;
+
+}
+
+.titulo
+{
+    width: 50%;
+    margin: 0px;
+}
+
+.containerTitulo
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo2
+{
+    margin-bottom: 2rem;
+}
+
+.linea
+{
+    background-color: silver;
+    height: 0.2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+.input1
+{
+    height:110px;
+    display:flex;
+    align-items:center;
+}
+
+.contenedorMedio
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.textoMedio
+{
+    text-align: center;
+    margin-top: 20px;
+}
