@@ -1,12 +1,12 @@
 const key = "teachers"
 const keyProfile = "profile";
-export const getTeachers = () => {
-    checkAppointments();
+
+const getTeachers = () => {
+    checkTeachers();
     const items = localStorage.getItem(key);
     return items;
 }
-
-export const saveTeacher = (body) => {
+const saveTeacher = (body) => {
     checkTeachers();
     const items = localStorage.getItem(key);
     items.push(body)
@@ -14,8 +14,7 @@ export const saveTeacher = (body) => {
     return items;
 }
 
-
-export const loginTeacher = (email, password) => {
+const loginTeacher = (email, password) => {
     const items = localStorage.getItem(key);
     const item = items.find((teacher) => teacher.email === email && teacher.password === password)
     if(item) {
@@ -28,17 +27,16 @@ export const loginTeacher = (email, password) => {
     return false;
 }
 
-
-export const getTeacherById = (id) => {
+const getTeacherById = (id) => {
     checkTeachers();
     const items = localStorage.getItem(key);
     return items.findIndex(id);
 }
-
-
 
 const checkTeachers = () => {
     if(localStorage.getItem(key) === null) {
         localStorage.setItem(key,[]);
     }
  }
+
+ export default {getTeachers, saveTeacher, loginTeacher, getTeacherById, checkTeachers}

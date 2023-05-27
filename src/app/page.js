@@ -7,11 +7,6 @@ import { useRouter } from 'next/navigation'
 
 export default function Home() {
   
-  const nano = () => 
-  {
-    
-  }
-
   const [usuario, setUsuario] = useState('');  
   const [password, setPassword] = useState('');  
 
@@ -19,17 +14,23 @@ export default function Home() {
   
   const handleClick = () =>{
       
-      if(usuario === 'adminDocente' && password === 'adminDocente'){
-          router.push('/pantalla_principal_docente');
+      let a = false;
+      const items = JSON.parse(localStorage.getItem("userData"));
+      for(let i = 0; i< items.length; i++ )
+      {
+        if(items[i].correo == usuario && items[i].contraseña == password)
+        {
 
-      }else if(usuario === 'adminEstudiante' && password === 'adminEstudiante'){
-          router.push('/pantalla_principal_estudiante');
-      }
-      else{
-          alert('Acceso denegado');
+        } 
+
+        if (a == true)
+        {
+
+        }
+
       }
       
-  }
+   }
   
   return (
 

@@ -25,7 +25,6 @@ export const saveAppointment = (body) => {
     return items;
 }
 
-
 export const getAppointmentByIdandSide = (id, type) => {
     checkAppointments();
     const items = localStorage.getItem(key);
