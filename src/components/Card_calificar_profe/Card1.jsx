@@ -35,8 +35,9 @@ function CardComp1() {
         <br/>
         <Card.Text>No calificado</Card.Text>
 
-        <Button onClick={toggleShowA}>Calificar</Button>
-          {showA && <CompToast show={showA} onClose={toggleShowA} animation = {true} />}
+        <Button variant="dark" className={styles.boton} onClick={toggleShowA}>Calificar</Button>
+        {showA && <CompToast show={showA} onClose={toggleShowA}/>}
+
 
       </Card.Body>
     </Card>
