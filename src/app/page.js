@@ -5,8 +5,12 @@ import Link from 'next/link'
 import { useState } from 'react' 
 import { useRouter } from 'next/navigation'
 
+
+
 export default function Home() {
-  
+
+  let logInUsuario 
+
   const [usuario, setUsuario] = useState('');  
   const [password, setPassword] = useState('');  
 
@@ -15,19 +19,36 @@ export default function Home() {
   const handleClick = () =>{
       
       let a = false;
+      let cont = 0;
+
       const items = JSON.parse(localStorage.getItem("userData"));
       for(let i = 0; i< items.length; i++ )
       {
         if(items[i].correo == usuario && items[i].contraseña == password)
         {
-
-        } 
-
-        if (a == true)
-        {
-
+          a = true
+          cont = i
         }
+      } 
 
+      if (a == true)
+      {
+        logInUsuario = items[cont]
+        let userLogInUsuarioJSON = JSON.stringify(logInUsuario)
+        localStorage.setItem("logInUser", userLogInUsuarioJSON)
+        if (logInUsuario.rol == "Docente")
+        {
+          router.push("/pantalla_principal_docente")
+        }
+        else
+        {
+          router.push("/pantalla_principal_estudiante")
+        }
+      }
+
+      else
+      {
+        alert("Usuario o contrasena incorrectos")
       }
       
    }

@@ -12,27 +12,27 @@ import Citas from '@/components/Citas/Citas'
 
 const pantallaPerfil = () =>{
 
+    const cita = 
+    {
+        fecha : new Date(),
+        link : "",
+        status : "",
+        profesor : "",
+        estudiante : ""
+    }
+
+
+
+    let logInUser = JSON.parse(localStorage.getItem("logInUser"));
+
+    
+    console.log(cita)
+
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
-    const [contendoIsVisible, setContenidoIsVisible] = useState("DU");
 
     function swapTopBar()
     {
         setTopBarIsVisible(!topBarIsVisible)
-    }
-
-    function swapContenidoDU()
-    {
-        setContenidoIsVisible("DU")
-    }
-
-    function swapContenidoU()
-    {
-        setContenidoIsVisible("U")
-    }
-
-    function swapContenidoP()
-    {
-        setContenidoIsVisible("P")
     }
 
     let leftBarContent
@@ -40,38 +40,6 @@ const pantallaPerfil = () =>{
     if (topBarIsVisible)
     {
         leftBarContent = <LeftBar/>
-    }
-
-    let contenido
-
-    if (contendoIsVisible==="DU")
-    {
-        contenido = (
-            <>
-            <Input namew='Usuario'></Input>
-            <br></br>
-            <Input namew='Constrasena Actual'></Input>
-            <Input namew='Nueva Contrasena'></Input>
-            <Input namew='Repetir Contrasena'></Input>
-            </>)           
-        
-    }
-    else if(contendoIsVisible==="U")
-    {
-        contenido =(             
-        <>
-        <Input namew='Universidad'></Input>
-        <Input namew='Carrera'></Input>
-        <Input namew='Agregar Cursos'></Input>
-        </>)         
-    }
-    else
-    {
-        contenido = (             
-            <>
-            <Input namew='Titulo'></Input>
-            <Input namew='Presentacion'></Input>
-            </>)        
     }
 
     return(
@@ -88,21 +56,25 @@ const pantallaPerfil = () =>{
                     <p className={styles.titulo2}>Agregar sus horarios de disponibilidad durante la semana</p>
                     </div>
                     <div className={styles.input1}>
-                        <Input namew='Dia de semana'></Input>
+                        <Input namew='Dia'></Input>
+                        <Input namew='Mes'></Input>
+                        <Input namew='Año'></Input>
+
+       
+                    </div>
+                    <div className={styles.input1}>
                         <Input namew='Hora Inicio'></Input>
                         <Input namew='Hora Fin'></Input>
-                        <Input namew='Enlace de Sesion'></Input>
+                        <Input namew='Enlace de Sesion'></Input> 
                         <div style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems:'center', paddingBottom: '20px'}}>
                             <Button>Agregar</Button>
                         </div>
-                        
                     </div>
                     <div>
                         <Citas/>
                     </div>
                 </div>
             </div>
-                      
         </div>
 
     )

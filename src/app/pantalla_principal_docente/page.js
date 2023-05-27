@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button"
 
 const pantallaPDocente = () =>{
 
+    const logInUser = JSON.parse(localStorage.getItem("logInUser"));
+
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
 
     function swapTopBar()
@@ -30,7 +32,7 @@ const pantallaPDocente = () =>{
                 <div className={styles.contenido}>
                     <div className={styles.containerTop}>
                         <div className={styles.containerTitulo}>
-                            <h1 className={styles.titulo}>Bienvenido, Profesor Juan</h1>
+                            <h1 className={styles.titulo}>Bienvenido, Profesor {logInUser.nombres} {logInUser.apellidos}</h1>
                         </div>
                     </div>
                     <div className={styles.linea}></div>

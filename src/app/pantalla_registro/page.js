@@ -3,8 +3,11 @@
 import styles from './page.module.css'
 import Input from '../../components/Input/Input.jsx'
 import {useState} from "react"
+import { useRouter } from 'next/navigation'
 
 const pantallaRegistro = () =>{
+
+    const router = useRouter()
 
     function saveUser ()
     {
@@ -23,12 +26,12 @@ const pantallaRegistro = () =>{
             myUserArray.push(usuario)
             let userObjJSON = JSON.stringify(myUserArray)
             localStorage.setItem("userData", userObjJSON)
+            router.push("/")
         }
         else
         {
             alert("Contrasena no coinciden")
         }
-
 
     }
 
@@ -41,7 +44,13 @@ const usuario =
         apellidos: "",
         tipoDoc: "",
         numDoc: "",
-        rol: ""
+        rol: "",
+        universidad: [],
+        carrera: [],
+        cursos: [],
+        titulo: "",
+        presentacion: "",
+        profilePic:""
     }
     
     const [correo, setCorreo] = useState("");

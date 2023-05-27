@@ -1,0 +1,51 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+
+    height: 100%;
+    display: flex;
+}
+
+.contenido{
+
+    width: 100%;
+    padding: 2rem;
+}
+
+.containerTop
+{
+    display: flex;
+}
+
+.containerTitulo
+{
+    justify-content: left;
+    width: 88%;   
+
+}
+
+.linea
+{
+    background-color: silver;
+    height: 0.2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+.titulo
+{
+    width: 50%;
+    margin: 0px;
+    font-size: 25px;
+}
+
+.citas{
+    height: 40%;
+    background-color: #F3EDF7;
+    margin-bottom: 20px;
+}
