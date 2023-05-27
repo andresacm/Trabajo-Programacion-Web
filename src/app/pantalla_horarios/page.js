@@ -55,21 +55,16 @@ const pantallaPerfil = () =>{
                     <div>
                     <p className={styles.titulo2}>Agregar sus horarios de disponibilidad durante la semana</p>
                     </div>
-                    <div className={styles.input1}>
-                        <Input namew='Dia'></Input>
-                        <Input namew='Mes'></Input>
-                        <Input namew='Año'></Input>
-
-       
-                    </div>
-                    <div className={styles.input1}>
-                        <Input namew='Hora Inicio'></Input>
-                        <Input namew='Hora Fin'></Input>
-                        <Input namew='Enlace de Sesion'></Input> 
-                        <div style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems:'center', paddingBottom: '20px'}}>
+                        <div className={styles.input1}>
+                            <Input namew='Dia de la semana'></Input>
+                            <Input namew='Hora Inicio'></Input>
+                            <Input namew='Hora Fin'></Input>
+                            <Input namew='Enlace de Sesion'></Input> 
                             <Button>Agregar</Button>
+
+        
                         </div>
-                    </div>
+                    
                     <div>
                         <Citas/>
                     </div>
