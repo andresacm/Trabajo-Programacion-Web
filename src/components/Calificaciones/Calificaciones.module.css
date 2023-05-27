@@ -1,0 +1,43 @@
+.container {
+    background-color: #FEF7FF;
+    height: auto;
+    width: 909px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .circulo {
+    background-color: #EADDFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .numero {
+    margin: 0;
+    color: #21005D;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  
+  .fecha {
+    padding-top: 30px;
+    padding-bottom:5px;
+    margin: 0;
+  }
+  .nombre {
+    padding-top: 05px;
+    padding-bottom:30px;
+    margin: 0;
+  }
+  
