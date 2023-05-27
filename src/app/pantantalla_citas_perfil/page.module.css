@@ -32,24 +32,43 @@
 
 .titulo2
 {
-    margin-bottom: 2rem;
+    margin-bottom: 5px;
 }
 
 .linea
 {
     background-color: silver;
     height: 0.2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .containerLila {
-    background-color: none;
-    height: 50%;
+    background-color: black;
+    height: 390px;
     width: 100%;
     display: flex;
     flex-direction: column; /* Cambio a dirección de columna */
     justify-content: flex-start; /* Alinear elementos en la parte superior */
+
+  }
+
+  .forms{
+    padding-top:10px;
+  }
+  .h5_1{
+    display: flex;
+    justify-content: left;
+    width: 50%;
+    font-size: 15px;
+    color: gray;
+  }
+  
+  .input1{
+  
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
   }
   
   

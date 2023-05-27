@@ -4,7 +4,7 @@ import styles from './Card_perfil.module.css'
 
 function Card_perfil() {
   return (
-    <Card style={{ width: '85rem' }}>
+    <Card style={{ width: '83rem' }}>
       <Card.Body>
         <div className={styles.container}>
           <div className={styles.imagen}>

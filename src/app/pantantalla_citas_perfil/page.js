@@ -4,8 +4,7 @@ import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
 import {useState} from "react"
-import Calificaciones from '@/components/Calificaciones/Calificaciones'
-
+import Input from '../../components/Input/Input.jsx'
 import Card_perfil from "@/components/Card_perfil/Card_perfil"
 
 
@@ -55,7 +54,17 @@ const pantallaPerfil = () =>{
                     <div className={styles.linea}></div>
                     <div className={styles.containerLila}>
                         <Card_perfil/>
-
+                    </div>
+                    <div className={styles.titulo2}>
+                        <h6>Fechas y horarios disponibles</h6>
+                    </div>
+                    <div className={styles.linea}></div>
+                    <div className={styles.forms}>
+                    <div className={styles.input1}>
+                        <Input type= 'date' className={styles.Input} namew='Ingrese una fecha'></Input>
+                        <Input className={styles.Input} namew='Curso de interés'></Input>
+                    </div>
+                        
                     </div>
                 </div>
             </div>
