@@ -63,3 +63,9 @@
     text-align: center;
     margin-top: 20px;
 }
+
+.boton {
+    float: middle;
+    background-color: #6750A4;
+    color: #FEF7FF;
+}

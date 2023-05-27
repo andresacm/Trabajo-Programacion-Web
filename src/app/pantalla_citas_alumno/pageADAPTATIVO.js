@@ -4,12 +4,42 @@ import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
 import {useState} from "react"
-import CardComp1 from '@/components/Card_calificar_profe/Card1'
-import CardComp2 from '@/components/Card_calificar_profe/Card2'
+import CardComp1 from '@/components/Card_cita_profe/CardAdaptativo(NO USADO)'
+import CardComp2 from '@/components/Card_cita_profe/Card2'
 import Button from "react-bootstrap/Button"
-import CompToast from "@/components/Toggle_Toast/Toggle_Toast"
 
-const pantallaCPAlumno = () =>{
+const pantallaCAlumno = () =>{
+    const type = "teacher";
+    /*let items = [
+        {
+            id: 1,
+            name: "Juan Lopéz",
+            career: "Ingeniería de Sistemas",
+            image: "https://media.discordapp.net/attachments/915953820859768875/1109984691236372490/profe1.png",
+            logo: "https://media.discordapp.net/attachments/915953820859768875/1109985675886993448/monogram.png",
+            day: new Date(),
+            subject: "Curso Programación Web",
+            teacherId: 1,
+            studentId: 1,
+        },
+        {
+            id: 2,
+            name: "Juan Lopéz",
+            career: "Ingeniería de Sistemas",
+            image: "https://media.discordapp.net/attachments/915953820859768875/1109984691236372490/profe1.png",
+            logo: "https://media.discordapp.net/attachments/915953820859768875/1109985675886993448/monogram.png",
+            day: new Date(),
+            subject: "Curso Programación Web",
+            teacherId: 1,
+            teacher: {
+
+            },
+            studentId: 2,
+            student: {
+
+            }
+        }
+    ]*/
 
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
 
@@ -41,12 +71,12 @@ const pantallaCPAlumno = () =>{
                     <Button variant="dark" className={styles.boton}> Ver citas pasadas</Button>
                     </div>
                     <div className={styles.container1}>
-                        <div className={styles.contenidoCard}>
+                         
+                            <div className={styles.contenidoCard}>
                             <CardComp1/>
-                        </div>
-                        <div className={styles.contenidoCard}>
-                            <CardComp2/>
-                        </div>
+                             </div>
+                        
+                        
                     </div>
 
                 </div>
@@ -58,4 +88,4 @@ const pantallaCPAlumno = () =>{
 
 }
 
-export default pantallaCPAlumno;
+export default pantallaCAlumno;

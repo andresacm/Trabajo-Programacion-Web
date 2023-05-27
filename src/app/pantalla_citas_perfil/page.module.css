@@ -44,7 +44,7 @@
 }
 
 .containerLila {
-    background-color: black;
+    background-color:none;
     height: 390px;
     width: 100%;
     display: flex;

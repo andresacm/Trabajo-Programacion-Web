@@ -4,8 +4,8 @@ import styles from './Card_perfil.module.css'
 
 function Card_perfil() {
   return (
-    <Card style={{ width: '83rem' }}>
-      <Card.Body>
+    <Card style={{ width: '83rem'}}>
+      <Card.Body className={styles.puñeta}>
         <div className={styles.container}>
           <div className={styles.imagen}>
             <Card.Img variant="left" src="https://cdn.discordapp.com/attachments/1102289173337088064/1109985766601408614/monogram.png" />

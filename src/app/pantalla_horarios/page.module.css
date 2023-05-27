@@ -50,3 +50,10 @@
     align-items:center;
     justify-content: space-between;
 }
+
+.boton {
+    float: middle;
+    color: #6750A4;
+    background-color: #FEF7FF;
+    padding-bottom: 10px;
+}

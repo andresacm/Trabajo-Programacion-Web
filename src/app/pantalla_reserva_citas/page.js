@@ -14,7 +14,7 @@ import BGCitas from '../../components/BGCitas/BGCitas.jsx'
 const pantallaPerfil = () =>{
 
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
-
+    const [labelValue, setlabelValue] = useState('Seleccionar por nombre')
     function swapTopBar()
     {
         setTopBarIsVisible(!topBarIsVisible)
@@ -25,6 +25,18 @@ const pantallaPerfil = () =>{
     if (topBarIsVisible)
     {
         leftBarContent = <LeftBar/>
+    }
+
+    const handleClickNombre = () =>{
+        
+        setlabelValue('Seleccionar por nombre')
+
+    }
+
+    const handleClickFecha = () =>{
+        
+        setlabelValue('Seleccionar por fecha')
+
     }
 
     return(
@@ -38,8 +50,8 @@ const pantallaPerfil = () =>{
                     </div>    
                     <div className={styles.linea}></div>
                     <div className={styles.busq}>
-                        <Input namew="seleccione una fecha"></Input>
-                        <BGCitas></BGCitas>
+                        <Input namew={labelValue}></Input>
+                        <BGCitas nombre={handleClickNombre} fecha={handleClickFecha}></BGCitas>
                     </div>
                     <div style={{ display: 'flex' }}>
       <button className="profesorButton" style={{ marginRight: '20px', backgroundColor: '#F3EDF7', padding: '10px', border: 'none', cursor: 'pointer' }}>

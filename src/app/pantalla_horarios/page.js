@@ -60,7 +60,7 @@ const pantallaPerfil = () =>{
                             <Input namew='Hora Inicio'></Input>
                             <Input namew='Hora Fin'></Input>
                             <Input namew='Enlace de Sesion'></Input> 
-                            <Button>Agregar</Button>
+                            <Button variant="dark" className={styles.boton}>Agregar</Button>
 
         
                         </div>

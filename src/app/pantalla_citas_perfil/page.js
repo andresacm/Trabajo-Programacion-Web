@@ -6,6 +6,7 @@ import LeftBar from '../../components/LeftBar/LeftBar.jsx'
 import {useState} from "react"
 import Input from '../../components/Input/Input.jsx'
 import Card_perfil from "@/components/Card_perfil/Card_perfil"
+import Date_ from "@/components/Date_Picker/Date_Picker"
 
 
 const pantallaPerfil = () =>{
@@ -61,7 +62,7 @@ const pantallaPerfil = () =>{
                     <div className={styles.linea}></div>
                     <div className={styles.forms}>
                     <div className={styles.input1}>
-                        <Input type= 'date' className={styles.Input} namew='Ingrese una fecha'></Input>
+                        <Input type= 'date' className={styles.Input} namew='Ingrese una fecha'><Date_ /></Input>
                         <Input className={styles.Input} namew='Curso de interés'></Input>
                     </div>
                         

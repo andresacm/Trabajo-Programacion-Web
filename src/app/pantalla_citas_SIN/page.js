@@ -38,7 +38,7 @@ const pantallaPDocente = () =>{
                     <div className={styles.contenedorMedio}>
                         <div className={styles.textoMedio}>
                             <p>Actualmente no tiene citas de Asesoría reservadas</p><br/>
-                            <Button>Programar una cita</Button>
+                            <Button variant="dark" className={styles.boton}>Programar una cita</Button>
                         </div>
                         
                     </div>

@@ -4,8 +4,12 @@
     float: left;
     width: 50px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
+.puñeta{
+    background-color: #FEF7FF;
+}
 .nombre
 {
     width: 50000px;

@@ -253,10 +253,10 @@ const pantallaPerfil = () =>{
                             <h1 className={styles.titulo}>Mi Perfil</h1>
                         </div>
                         <div className={styles.containerBoton}>
-                            <Button onClick={handleOnClick}>Cancelar</Button>
+                            <Button variant="dark" className= {styles.boton} onClick={handleOnClick}>Cancelar</Button>
                         </div>    
                         <div className={styles.containerBoton}>
-                            <Button onClick={reeplazarItem}>Guardar</Button>
+                            <Button variant="dark" className= {styles.boton1} onClick={reeplazarItem}>Guardar</Button>
                         </div>
                     </div>
                     <div className={styles.linea}></div>
@@ -281,12 +281,12 @@ const pantallaPerfil = () =>{
                     </div>
                     
                     
-                    <Tabs
+                    <Tabs className={styles.letra}
                     defaultActiveKey="datos_usuario"
                     id="uncontrolled-tab-example"
-                    className="mb-3"
+                    
                     >
-                    <Tab eventKey="datos_usuario" title="Datos de usuario">
+                    <Tab className={styles.letra} eventKey="datos_usuario" title="Datos de usuario">
                     <>
                         <div className={styles.DataUsuario}>
                             <Input namew='Usuario' cambio={correoChangeHandler}></Input>
@@ -298,7 +298,7 @@ const pantallaPerfil = () =>{
                         </div>
                     </>
                     </Tab>
-                    <Tab eventKey="universidad" title="Universidad">
+                    <Tab className={styles.letra} eventKey="universidad" title="Universidad">
                         <>
                         <div className={styles.DataUsuario}>
                         <Input namew='Universidad' cambio={universidadChangeHandler}></Input>
@@ -309,7 +309,7 @@ const pantallaPerfil = () =>{
                         </div>
                         </>
                     </Tab>
-                    <Tab eventKey="presentacion" title="Presentacion">
+                    <Tab className={styles.letra} eventKey="presentacion" title="Presentacion">
                     <>
                     <div className={styles.DataUsuario}>
                         <Input namew='Titulo' cambio={tituloChangeHandler}></Input>
@@ -319,7 +319,7 @@ const pantallaPerfil = () =>{
                     </div>
                     </>
                     </Tab>
-                    <Tab eventKey="profilePic" title="Foto de Perfil">
+                    <Tab className={styles.letra} eventKey="profilePic" title="Foto de Perfil">
                     <div className={styles.DataUsuario}>
                         <Input namew='URL' cambio={profilePicChangeHandler}></Input>
                     </div>

@@ -91,3 +91,19 @@
     justify-content: space-between;
     width: 70%;
 }
+
+.boton {
+    float: right;
+    color: #6750A4;
+    background-color: #FEF7FF;
+}
+.boton1 {
+    float: right;
+    background-color: #6750A4;
+    color: #FEF7FF;
+}
+
+.letra{
+    color: #6750A4;
+    
+}
