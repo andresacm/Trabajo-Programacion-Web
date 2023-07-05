@@ -22,7 +22,7 @@ const pantallaPerfil = () =>{
         {
             router.push("/pantalla_principal_docente")
         }
-        else
+        else if(logInUser.rol == "Estudiante")
         {
             router.push("/pantalla_principal_estudiante")
         }

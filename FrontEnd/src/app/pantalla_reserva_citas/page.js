@@ -10,6 +10,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ReservationForm from './reservationform';
 import ReservationList from './reservationlist';
 import BGCitas from '../../components/BGCitas/BGCitas.jsx'
+import Card_reserva from '../../components/Card_reserva/Card_reserva.jsx'
 
 const pantallaPerfil = () =>{
 
@@ -54,19 +55,10 @@ const pantallaPerfil = () =>{
                         <BGCitas nombre={handleClickNombre} fecha={handleClickFecha}></BGCitas>
                     </div>
                     <div style={{ display: 'flex' }}>
-      <button className="profesorButton" style={{ marginRight: '20px', backgroundColor: '#F3EDF7', padding: '10px', border: 'none', cursor: 'pointer' }}>
-        <h3>Felipe Lopez Jimenez</h3>
-        <p style={{ fontSize: '12px' }}>Universidad de Lima - Ingenieria de sistemas</p>
-      </button>
-      <button className="profesorButton" style={{ marginRight: '20px', backgroundColor: '#F3EDF7', padding: '10px', border: 'none', cursor: 'pointer' }}>
-        <h3>Felipe Lopez Sanchez</h3>
-        <p style={{ fontSize: '12px' }}>Universidad de Lima - Ingenieria Industrial</p>
-      </button>
-      <button className="profesorButton" style={{ backgroundColor: '#F3EDF7', padding: '10px', border: 'none', cursor: 'pointer' }}>
-        <h3>Felipe Andres Lopez</h3>
-        <p style={{ fontSize: '12px' }}>Universidad de Tacna - Medicina</p>
-      </button>
-    </div>
+                        <Card_reserva nombre="Felipe Lopez Sanchez" universidad="Universidad de Lima" carrera="Ingenieria Industrial"/>
+                        <Card_reserva nombre="Felipe Lopez Sanchez" universidad="Universidad de Lima" carrera="Ingenieria Industrial"/>
+                        <Card_reserva nombre="Felipe Lopez Sanchez" universidad="Universidad de Lima" carrera="Ingenieria Industrial"/>     
+                    </div>
                     
                 </div>
             </div>

@@ -5,8 +5,6 @@ import Link from 'next/link'
 import { useState } from 'react' 
 import { useRouter } from 'next/navigation'
 
-
-
 export default function Home() {
 
   let logInUsuario 
@@ -15,12 +13,10 @@ export default function Home() {
   const [password, setPassword] = useState('');  
 
   const router = useRouter();
-  
   const handleClick = () =>{
       
       let a = false;
       let cont = 0;
-
       const items = JSON.parse(localStorage.getItem("userData"));
       for(let i = 0; i< items.length; i++ )
       {
@@ -40,7 +36,7 @@ export default function Home() {
         {
           router.push("/pantalla_principal_docente")
         }
-        else
+        else if(logInUsuario.rol == "Estudiante")
         {
           router.push("/pantalla_principal_estudiante")
         }

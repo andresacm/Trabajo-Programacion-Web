@@ -24,6 +24,13 @@ const pantallaPDocente = () =>{
         leftBarContent = <LeftBar/>
     }
 
+    const handleOnProgramarCita = () =>{
+
+        
+
+
+    }
+
     return(
         <div className={styles.container}>
             <TopBar onButtonClick={swapTopBar}></TopBar>
