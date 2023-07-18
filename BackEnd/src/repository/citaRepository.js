@@ -1,11 +1,22 @@
 let citas = [{
     id: 1,
-    diaSemana: '',
-    inicio: '',
-    fin: '',
-    enlace: '',
+    diaSemana: 'Lunes',
+    fecha: '18/06/2023',
+    inicio: '08:00 am',
+    fin: '10:00 am',
+    enlace: 'https://www.zoom.com',
+    idDocente: 1,
+    idEstudiante: 1,
+},{
+    id: 2,
+    diaSemana: 'Jueves',
+    fecha: '21/06/2023',
+    inicio: '10:00 am',
+    fin: '1:00 pm',
+    enlace: 'https://www.zoom.com',
     idDocente: 1,
     idEstudiante: 1
+
 }];
 
 let counter = 1;

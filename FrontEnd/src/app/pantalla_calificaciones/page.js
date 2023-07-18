@@ -10,26 +10,10 @@ import Calificaciones from '@/components/Calificaciones/Calificaciones'
 const pantallaPerfil = () =>{
 
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
-    const [contendoIsVisible, setContenidoIsVisible] = useState("DU");
 
     function swapTopBar()
     {
         setTopBarIsVisible(!topBarIsVisible)
-    }
-
-    function swapContenidoDU()
-    {
-        setContenidoIsVisible("DU")
-    }
-
-    function swapContenidoU()
-    {
-        setContenidoIsVisible("U")
-    }
-
-    function swapContenidoP()
-    {
-        setContenidoIsVisible("P")
     }
 
     let leftBarContent

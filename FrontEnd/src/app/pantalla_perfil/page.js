@@ -10,7 +10,8 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useRouter } from 'next/navigation'
-
+import DocentesApi from '../api/docentes.js'
+import EstudiantesApi from '../api/estudiantes.js'
 
 const pantallaPerfil = () =>{
 

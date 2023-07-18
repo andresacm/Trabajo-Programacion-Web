@@ -1,20 +1,20 @@
 let docentes = [{
     id: 1,
-    correo: '',
-    contrasenna: '',
-    nombres: '',
-    apellidos: '',
+    correo: 'example1@gmail.com',
+    contrasenna: '123456',
+    nombres: 'ejemplo',
+    apellidos: 'a',
     tipoDoc: '',
     nroDoc: 0,
-    rol: '',
+    rol: 'docente',
     foto: '',
-    usuario: '',
+    usuario: 'example',
     universidad: '',
     carrera: '',
     cursos: [],
     titulo: '',
     presentacion: '',
-    citas: []
+    citas: [1, 2]
 }];
 
 let counter = 1;

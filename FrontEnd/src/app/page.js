@@ -2,56 +2,75 @@
 
 import styles from './page.module.css'
 import Link from 'next/link'
-import { useState } from 'react' 
+import { useEffect, useState } from 'react' 
 import { useRouter } from 'next/navigation'
+import DocentesApi from './api/docentes.js'
+import EstudiantesApi from './api/estudiantes.js'
+
 
 export default function Home() {
 
-  let logInUsuario 
+  const [docentes, setDocentes] = useState([]);
+  const [estudiantes, setEstudiantes] = useState([]);
 
+  const handleOnLoad = async() =>{
+    const resultD = await DocentesApi.findAll();
+    setDocentes(resultD.data);
+    const resultE = await EstudiantesApi.findAll();
+    setEstudiantes(resultE.data);
+  }
+
+  let logInUsuario;
+  console.log(estudiantes)
   const [usuario, setUsuario] = useState('');  
   const [password, setPassword] = useState('');  
-
   const router = useRouter();
   const handleClick = () =>{
       
-      let a = false;
-      let cont = 0;
-      const items = JSON.parse(localStorage.getItem("userData"));
-      for(let i = 0; i< items.length; i++ )
-      {
-        if(items[i].correo == usuario && items[i].contraseña == password)
-        {
-          a = true
-          cont = i
-        }
-      } 
+    let a = false;
+    let cont = 0;
 
-      if (a == true)
-      {
-        logInUsuario = items[cont]
-        let userLogInUsuarioJSON = JSON.stringify(logInUsuario)
-        localStorage.setItem("logInUser", userLogInUsuarioJSON)
-        if (logInUsuario.rol == "Docente")
-        {
-          router.push("/pantalla_principal_docente")
-        }
-        else if(logInUsuario.rol == "Estudiante")
-        {
-          router.push("/pantalla_principal_estudiante")
-        }
-      }
-
-      else
-      {
-        alert("Usuario o contrasena incorrectos")
+    for (let i = 0; i < docentes.length; i++) {
+      if ((docentes[i].usuario == usuario && docentes[i].contrasenna == password) || (docentes[i].correo == usuario && docentes[i].contrasenna == password)) {
+        a = true;
+        logInUsuario = docentes[i]
+        cont = i
       }
       
-   }
+    }
+
+    for (let j = 0; j < estudiantes.length; j++) {
+      if ((estudiantes[j].usuario == usuario && estudiantes[j].contrasenna == password) || (estudiantes[j].correo == usuario && estudiantes[j].contrasenna == password)) {
+        a = true;
+        logInUsuario = estudiantes[j]
+        cont = j
+      }
+      
+    }
+    
+    if (a == true) {
+      window.sessionStorage.setItem("logInUser", JSON.stringify(logInUsuario));
+      if (logInUsuario.rol == "docente")
+      {
+        router.push("/pantalla_principal_docente")
+      }
+      else if(logInUsuario.rol == "estudiante")
+      {
+        router.push("/pantalla_principal_estudiante")
+      }
+    }else{
+      alert("Usuario o contrasena incorrectos")
+    }
+      
+  }
   
+   useEffect(() => {
+      handleOnLoad()
+   },[]);
+
   return (
 
-    
+
     <main className={styles.container}>
       <h1 className={styles.titulo}>Sistema de citas para atención a estudiantes</h1>
       <form>

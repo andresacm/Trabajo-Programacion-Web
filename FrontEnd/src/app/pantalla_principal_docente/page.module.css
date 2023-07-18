@@ -49,3 +49,18 @@
     background-color: #F3EDF7;
     margin-bottom: 20px;
 }
+
+.textCitas{
+    padding: 10px;
+    font-size: 15px;
+    height: 10%;
+}
+
+.divCitas{
+    height: 90%;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 10px;
+}

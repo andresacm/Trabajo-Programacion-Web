@@ -3,13 +3,24 @@
 import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
-import {useState} from "react"
-import Button from "react-bootstrap/Button"
+import {useEffect, useState} from "react"
+import ProximasCitas from '../../components/ProximasCitas/ProximasCitas.jsx'
+import CitasApi from '../api/citas.js'
+import EstudiantesApi from '../api/estudiantes.js'
 
 const pantallaPDocente = () =>{
 
-    const logInUser = JSON.parse(localStorage.getItem("logInUser"));
-
+    const logInUser = JSON.parse(window.sessionStorage.logInUser);
+    const [citas, setCitas] = useState([]);
+    const [estudiantes, setEstudiantes] = useState([]);
+    
+    const handleOnLoad = async() =>{
+        const result = await CitasApi.findAll();
+        setCitas(result.data)
+        const resultE = await EstudiantesApi.findAll();
+        setEstudiantes(resultE.data)
+    }
+    
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
 
     function swapTopBar()
@@ -24,6 +35,9 @@ const pantallaPDocente = () =>{
         leftBarContent = <LeftBar/>
     }
 
+    useEffect(() =>{
+        handleOnLoad();
+    }, [])
     return(
         <div className={styles.container}>
             <TopBar onButtonClick={swapTopBar}></TopBar>
@@ -37,7 +51,17 @@ const pantallaPDocente = () =>{
                     </div>
                     <div className={styles.linea}></div>
                     <div className={styles.citas}>
-                        
+                        <h5 className={styles.textCitas}><strong>Proximas citas</strong></h5>
+                        <div className={styles.divCitas}>
+                            {
+                                
+                                citas.map(item =>(
+                                    <ProximasCitas inicial={"J"} nombre={"Juan"} apellido={"Perez"} fecha={item.fecha} inicio={item.inicio}/>
+                                    
+                                ))
+
+                            }
+                        </div>
                     </div>
                     <div className={styles.citas}>
 

@@ -14,7 +14,7 @@ let estudiantes = [{
     cursos: [],
     titulo: '',
     presentacion: '',
-    citas: []
+    citas: [1, 2]
 }];
 
 let counter = 1;

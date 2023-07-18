@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button"
 
 const pantallaPEstudiante = () =>{
 
-    const logInUser = JSON.parse(localStorage.getItem("logInUser"));
+    const logInUser = JSON.parse(sessionStorage.getItem("logInUser"));
 
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
 

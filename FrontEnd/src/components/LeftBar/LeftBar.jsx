@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const LeftBar = () =>{
 
-    const logInUser = JSON.parse(localStorage.getItem("logInUser"));
+    const logInUser = JSON.parse(window.sessionStorage.logInUser);
 
     if(logInUser.rol == "Docente")
     {
