@@ -14,7 +14,7 @@ app.use(cors());
 app.get('/', (req, res) =>{
     return res.json({result: 'OK'});
 });
-
+//
 //rutas
 app.use("/docentes", docentesRoutes);
 app.use("/estudiantes", estudiantesRoutes)
