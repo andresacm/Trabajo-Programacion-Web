@@ -6,7 +6,7 @@ import cors from 'cors';
 import docentesRoutes from './src/routes/docentes.js';
 import estudiantesRoutes from './src/routes/estudiantes.js';
 import citasRoutes from './src/routes/citas.js'
-
+//
 let app = express();
 app.use(bodyParser.json());
 app.use(cors());
