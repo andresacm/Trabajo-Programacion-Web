@@ -3,7 +3,7 @@
 import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import Button from "react-bootstrap/Button"
 import Input from '@/components/Input/Input'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -31,7 +31,28 @@ const pantallaPerfil = () =>{
 
     let logInUser = JSON.parse(localStorage.getItem("logInUser"));
 
+
     const items = JSON.parse(localStorage.getItem("userData"));
+
+    const handleOnLoad = async() =>{
+        let rol = items.rol;
+        let result;
+        if (rol=="doc"){
+            result = await DocentesApi.findOne(items.id);
+        }else{
+            result = await EstudiantesApi.findOne(items.id);
+        }
+        
+        setCitas(result.data)
+
+        //const resultE = await EstudiantesApi.findAll();
+        //setEstudiantes(resultE.data)
+
+    }
+
+    useEffect(()=>{
+        handleOnLoad();
+    }, [])
 
     function reeplazarItem()
     {
