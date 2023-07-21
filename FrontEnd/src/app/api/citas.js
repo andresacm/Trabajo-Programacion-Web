@@ -4,7 +4,7 @@ const endpoint = '/citas';
 
 const create = async (request) => await Base.post(endpoint,request);
 
-const findAll = async() => await Base.get(endpoint);
+const findAll = async(id) =>  await Base.get(endpoint.concat('/', id));
 
 const findOne = async(id) => {
     const newEndpoint = endpoint.concat('/',id); //http://localhost:3001/docentes/1
@@ -21,5 +21,6 @@ const remove = async(id) => {
 }
 
 const docentesApi = { create, findAll, findOne, update, remove }
+
 
 export default docentesApi;

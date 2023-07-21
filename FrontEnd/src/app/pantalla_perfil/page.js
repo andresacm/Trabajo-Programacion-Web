@@ -277,7 +277,7 @@ const pantallaPerfil = () =>{
                             </div>
                         </div>
                         <div className={styles.fotoPerfil}>
-                            <img style={{height:"60%", width:"60%"}} src={logInUser.profilePic}></img>
+                            <img style={{height:"60%", width:"60%"}} src={""}></img>
                         </div>
                     </div>
                     

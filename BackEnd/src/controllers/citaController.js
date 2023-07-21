@@ -3,7 +3,8 @@ import DocenteRepository from "../repository/docenteRepository.js";
 import EstudianteRepository from "../repository/estudianteRepository.js";
 
 const findAll = (req, res) =>{
-    const result = CitasRepository.findAll();
+    const id = req.params.id;
+    const result = CitasRepository.findAll(id);
     return sendResponse(result,res)
 }
 

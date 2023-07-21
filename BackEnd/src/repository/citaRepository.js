@@ -1,5 +1,7 @@
 let citas = [{
     id: 1,
+    nombres: 'Juan',
+    apellidos: 'Perez',
     diaSemana: 'Lunes',
     fecha: '18/06/2023',
     inicio: '08:00 am',
@@ -9,6 +11,8 @@ let citas = [{
     idEstudiante: 1,
 },{
     id: 2,
+    nombres: 'Julio',
+    apellidos: 'Uribe',
     diaSemana: 'Jueves',
     fecha: '21/06/2023',
     inicio: '10:00 am',
@@ -21,7 +25,18 @@ let citas = [{
 
 let counter = 1;
 
-const findAll = () =>{
+const findAll = (id) =>{
+    //recuperar citas por id
+    let respuesta = [];
+    console.log("llega id: "+ id);
+    for (let i = 0; i < citas.length; i++) {
+        console.log("idDocente: "+citas[i].idDocente)
+        if (citas[i].idDocente === id) {
+            console.log(citas[i]);
+            respuesta.push(citas[i]);
+        }
+    }
+    console.log(respuesta);
     return citas;
 }
 
