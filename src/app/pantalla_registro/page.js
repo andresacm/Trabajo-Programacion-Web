@@ -10,22 +10,14 @@ import EstudiantesApi from '../api/estudiantes.js'
 const pantallaRegistro = () =>{
 
     let persona = {
-        id: 1,
-        correo: '',
-        contrasenna: '',
+        id: '',
+        email: '',
+        password: '',
         nombres: '',
         apellidos: '',
-        tipoDoc: '',
-        nroDoc: 0,
-        rol: '',
-        foto: '',
-        usuario: '',
-        universidad: '',
-        carrera: '',
-        cursos: [],
-        titulo: '',
-        presentacion: '',
-        citas: []
+        tipo_documento: '',
+        dni: 0,
+        rol: ''
     }
 
     const [datosPersona, setDatosPersona] = useState(persona)
@@ -34,7 +26,10 @@ const pantallaRegistro = () =>{
     const router = useRouter();
 
     const handleGuardarDocente = async (persona) =>{
-        await DocentesApi.create(persona)
+        const resp = await DocentesApi.create(persona)
+        const data = await resp.json()
+
+        
     }
 
     const handleGuardarEstudiante = async (persona) =>{
@@ -60,8 +55,8 @@ const pantallaRegistro = () =>{
             <h1 className={styles.h1_1}>Sistema de Citas para Atención a Estudiantes</h1>
             <h1 className={styles.h1_2}>Pagina de Registros</h1>
            <div className={styles.input1}>
-                <Input id="correo" namew='Correo Electronico' value={datosPersona.correo} cambio={e => setDatosPersona({...datosPersona, correo: e.target.value})}></Input>
-                <Input id= "pass" namew='Password' value={datosPersona.contrasenna} cambio={e => setDatosPersona({...datosPersona, contrasenna: e.target.value})}></Input>
+                <Input id="correo" namew='Correo Electronico' value={datosPersona.email} cambio={e => setDatosPersona({...datosPersona, email: e.target.value})}></Input>
+                <Input id= "pass" namew='Password' value={datosPersona.password} cambio={e => setDatosPersona({...datosPersona, password: e.target.value})}></Input>
             </div>
             <div className={styles.input2}>
                 <Input id="pass2" namew='Ingrese Password nuevamente' value={confirmContrasenna} cambio={e => setConfirmContrasenna(e.target.value)}></Input>
@@ -72,8 +67,8 @@ const pantallaRegistro = () =>{
                 <Input id="apellidos" namew='Apellidos' value={datosPersona.apellidos} cambio={e => setDatosPersona({...datosPersona, apellidos: e.target.value})}></Input>
             </div>
             <div className={styles.input1}>
-                <Input id="tipoDoc" namew='Tipo de Documento' value={datosPersona.tipoDoc} cambio={e => setDatosPersona({...datosPersona, tipoDoc: e.target.value})}></Input>
-                <Input id="numDoc" namew='Nro de Documento' value={datosPersona.nroDoc} cambio={e => setDatosPersona({...datosPersona, nroDoc: e.target.value})}></Input>
+                <Input id="tipoDoc" namew='Tipo de Documento' value={datosPersona.tipoDoc} cambio={e => setDatosPersona({...datosPersona, tipo_documento: e.target.value})}></Input>
+                <Input id="numDoc" namew='Nro de Documento' value={datosPersona.nroDoc} cambio={e => setDatosPersona({...datosPersona, dni: e.target.value})}></Input>
             </div>
             <div className={styles.input1}>
                 <Input id="rol" namew='Rol' value={datosPersona.rol} cambio={e => setDatosPersona({...datosPersona, rol: e.target.value})}></Input>

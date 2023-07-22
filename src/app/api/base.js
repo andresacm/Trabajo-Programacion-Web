@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URI = 'http://localhost:3001';
+const URI = 'https://prograweb-202301-api.azurewebsites.net/';
 
 const get = async (endpoint) => {
     try {
