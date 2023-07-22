@@ -15,10 +15,12 @@ const pantallaPDocente = () =>{
     const [estudiantes, setEstudiantes] = useState([]);
     
     const handleOnLoad = async() =>{
-        const result = await CitasApi.findAll();
+        const result = await CitasApi.findAll(1);
+        console.log("result data: "+result.data)
         setCitas(result.data)
-        const resultE = await EstudiantesApi.findAll();
-        setEstudiantes(resultE.data)
+
+        //const resultE = await EstudiantesApi.findAll();
+        //setEstudiantes(resultE.data)
     }
     
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
@@ -56,7 +58,7 @@ const pantallaPDocente = () =>{
                             {
                                 
                                 citas.map(item =>(
-                                    <ProximasCitas inicial={"J"} nombre={"Juan"} apellido={"Perez"} fecha={item.fecha} inicio={item.inicio}/>
+                                    <ProximasCitas inicial={"x"} nombre={item.nombres} apellidos={item.apellidos} fecha={item.fecha} inicio={item.inicio}/>
                                     
                                 ))
 

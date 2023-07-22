@@ -24,7 +24,7 @@ app.use('/images', express.static('images'));
 app.get('/', (req, res) =>{
     return res.json({result: 'OK'});
 });
-
+//
 //rutas
 app.use("/docentes", docentesRoutes);
 app.use("/estudiantes", estudiantesRoutes)

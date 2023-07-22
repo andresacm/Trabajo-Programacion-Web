@@ -25,8 +25,6 @@ const findAll = async (req, res) =>{
     } else if (docente) {
         result = CitasRepository.findAllEst(userid)
     }
-
-    return sendResponse(result,res)
 }
 
 const create = async (req, res) =>{
