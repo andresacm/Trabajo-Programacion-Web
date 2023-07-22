@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
 import {useState} from "react"
-import Ranking from '@/components/Ranking/Ranking'
+import Ranking from '../../components/Ranking/Ranking'
 
 
 const pantallaPerfil = () =>{
