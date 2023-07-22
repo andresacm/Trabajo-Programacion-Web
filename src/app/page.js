@@ -1,5 +1,5 @@
 'use client'
-
+ 
 import styles from './page.module.css'
 import Link from 'next/link'
 import { useEffect, useState } from 'react' 
@@ -15,9 +15,9 @@ export default function Home() {
 
   const handleOnLoad = async() =>{
     const resultD = await DocentesApi.findAll();
-    setDocentes(resultD.data);
+    setDocentes(resultD?.data);
     const resultE = await EstudiantesApi.findAll();
-    setEstudiantes(resultE.data);
+    setEstudiantes(resultE?.data);
   }
 
   let logInUsuario;

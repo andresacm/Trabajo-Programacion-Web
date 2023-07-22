@@ -3,12 +3,12 @@
 import styles from './page.module.css'
 import TopBar from '../../components/TopBar/TopBar.jsx'
 import LeftBar from '../../components/LeftBar/LeftBar.jsx'
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import Button from "react-bootstrap/Button"
 
 const pantallaPEstudiante = () =>{
+    const [logInUser, setLogInUser] = useState({});
 
-    const logInUser = JSON.parse(sessionStorage.getItem("logInUser"));
 
     const [topBarIsVisible, setTopBarIsVisible] = useState(true);
 
@@ -21,8 +21,24 @@ const pantallaPEstudiante = () =>{
 
     if (topBarIsVisible)
     {
-        leftBarContent = <LeftBar/>
+        leftBarContent = <LeftBar logInUser={logInUser}/>
     }
+
+    useEffect(() => {
+        let val;
+        try {
+            val = JSON.parse(window?.sessionStorage?.logInUser || "");
+
+        } catch(err) {
+            val = null;
+        } 
+        
+        setLogInUser( val || {
+            "nombres": "John",
+            "apellidos": "Doe",
+            "rol": "Estudiante"
+          });
+    }, []);
 
     return(
         <div className={styles.container}>

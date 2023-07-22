@@ -1,11 +1,29 @@
+import { useEffect, useState } from 'react';
 import Styles from './LeftBar.module.css'
 import Link from 'next/link'
 
-const LeftBar = () =>{
+const LeftBar = ({logInUser}) =>{
+ 
 
-    const logInUser = JSON.parse(window.sessionStorage.logInUser);
 
-    if(logInUser.rol == "Docente")
+    // useEffect(() =>{
+    //     let val;
+    //     try {
+    //         val = JSON.parse(window?.sessionStorage?.logInUser || "");
+
+    //     } catch(err) {
+    //         val = null;
+    //     }
+        
+    //     setLogInUser( val || {
+    //         "nombres": "John",
+    //         "apellidos": "Doe",
+    //         "rol": "Docente"
+    //       });
+
+    // }, [])
+
+    if(logInUser?.rol == "Docente")
     {
         return(
 
