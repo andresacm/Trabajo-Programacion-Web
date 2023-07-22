@@ -29,15 +29,18 @@ const pantallaRegistro = () =>{
         const resp = await DocentesApi.create(persona)
         const data = await resp.json()
 
-        
+        sessionStorage.setItem('logInUser',JSON.stringify(data))
     }
 
     const handleGuardarEstudiante = async (persona) =>{
-        await EstudiantesApi.create(persona)
+        const resp = await EstudiantesApi.create(persona)
+        const data = await resp.json()
+
+        sessionStorage.setItem('logInUser',JSON.stringify(data))
     }
 
     const saveUser = () =>{
-        if (datosPersona.contrasenna == confirmContrasenna) {
+        if (datosPersona.password == confirmContrasenna) {
             if (datosPersona.rol == "docente") {
                 handleGuardarDocente(datosPersona)
             }else if(datosPersona.rol == "estudiante"){
