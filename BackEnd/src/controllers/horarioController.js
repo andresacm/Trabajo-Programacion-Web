@@ -1,7 +1,8 @@
 import HorarioRepository from "../repository/cursoRepository.js";
 
 const findAll = async (req, res) =>{
-    const result = await HorarioRepository.findAll();
+    const id = req.params.id;
+    const result = await HorarioRepository.findAll(id);
     return sendResponse(result,res)
 }
 
