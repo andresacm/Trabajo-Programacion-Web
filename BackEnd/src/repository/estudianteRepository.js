@@ -1,61 +1,50 @@
-let estudiantes = [{
-    id: 1,
-    correo: '',
-    contrasenna: '',
-    nombres: '',
-    apellidos: '',
-    tipoDoc: '',
-    nroDoc: 0,
-    rol: '',
-    foto: '',
-    usuario: '',
-    universidad: '',
-    carrera: '',
-    cursos: [],
-    titulo: '',
-    presentacion: '',
-    citas: [1, 2]
-}];
+import { Usuario } from "../db/index.js"
 
-let counter = 1;
-
-const findAll = () =>{
+const findAll = async () => {
+    const estudiantes = await Usuario.findAll({
+        where : {
+            rol: "est"
+        }
+    })
     return estudiantes;
 }
 
-const create = (estudiante) =>{
-    counter++;
-    const newEstudiante = {...estudiante, id: counter};
-    estudiantes.push(newEstudiante);
+const create = async (estudiante) =>{
+    const nuevoEst = await Usuario.create(estudiante)
+    return nuevoEst;
+}
 
+const findOne = async (id) =>{
+    const estudiante = await Usuario.findOne({
+        where : {
+            id: id
+        }
+    })
     return estudiante;
 }
 
-const findOne = (id) =>{
-    const result = estudiantes.find(x => x.id == id);
-    return result;
+const update = async (estudiante) =>{
+    const id = estudiante.id;
+
+    const actEst = await Usuario.update(estudiante,{
+        where : {
+            id : id
+        }
+    })
+    
+    return actEst;
 }
 
-const update = (estudiante) =>{
-    const index = estudiantes.findIndex(item => item.id == estudiante.id);
-    if(index > -1){
-        estudiantes[index] = estudiante;
-        return true
-    }
+// const remove = (id) =>{
+//     const index = estudiantes.findIndex(item => item.id == id)
+//     if(index > -1){
+//         estudiantes.splice(index, 1)
+//         return true
+//     }
 
-    return false
-}
+//     return false
+// }
 
-const remove = (id) =>{
-    const index = estudiantes.findIndex(item => item.id == id)
-    if(index > -1){
-        estudiantes.splice(index, 1)
-        return true
-    }
-
-    return false
-}
-
-const EstudianteRepository = { findAll, create, findOne, update, remove}
+const EstudianteRepository = { findAll, create, findOne, update}
 
 export default EstudianteRepository;

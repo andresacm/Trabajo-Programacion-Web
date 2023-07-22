@@ -1,60 +1,51 @@
-let citas = [{
-    id: 1,
-    diaSemana: 'Lunes',
-    fecha: '18/06/2023',
-    inicio: '08:00 am',
-    fin: '10:00 am',
-    enlace: 'https://www.zoom.com',
-    idDocente: 1,
-    idEstudiante: 1,
-},{
-    id: 2,
-    diaSemana: 'Jueves',
-    fecha: '21/06/2023',
-    inicio: '10:00 am',
-    fin: '1:00 pm',
-    enlace: 'https://www.zoom.com',
-    idDocente: 1,
-    idEstudiante: 1
+import { Cita } from "../db/index.js"
 
-}];
-
-let counter = 1;
-
-const findAll = () =>{
+const findAllEst = async (userid) =>{
+    const citas = await Cita.findAll({
+        where : {
+            usuario_est_id: userid
+        }
+    })
     return citas;
 }
 
-const create = (cita) =>{
-    counter++;
-    const newCita = {...cita, id: counter}
-    citas.push(newCita)
-
-    return cita
+const findAllDoc = async (userid) =>{
+    const citas = await Cita.findAll({
+        where : {
+            usuario_doc_id: userid
+        }
+    })
+    return citas;
 }
 
-const findOne = (id) =>{
-    const result = citas.find(x => x.id == id)
-    return result
+const create = async (cita) =>{
+    const nuevaCita = await Cita.create(cita)
+    return nuevaCita
 }
 
-const update = (cita) =>{
-    const index = citas.findIndex(item => item.id === cita.id)
-    if (index > -1) {
-        citas[index] = cita
-        return true
-    }
-    return false
+// const findOne = (id) =>{
+//     const result = citas.find(x => x.id == id)
+//     return result
+// }
+
+// const update = (cita) =>{
+//     const index = citas.findIndex(item => item.id === cita.id)
+//     if (index > -1) {
+//         citas[index] = cita
+//         return true
+//     }
+//     return false
+// }
+
+const remove = async (id) =>{
+    await Cita.destroy({
+        where : {
+            id : id
+        }
+    })
+
+    return true;
 }
 
-const remove = (id) =>{
-    const index = citas.findIndex(item => item.id == id)
-    if (index > -1) {
-        citas.splice(index, 1)
-        return true
-    }
-    return false
-}
-
-const CitasRepository = {findAll, create, findOne, update, remove};
+const CitasRepository = {findAllDoc, findAllEst, create, remove};
 export default CitasRepository;

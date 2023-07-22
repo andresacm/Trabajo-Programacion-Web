@@ -11,7 +11,7 @@ const sequelize = new Sequelize(CADENA_CONEXION, {
     }
 })
 
-const Usuario = sequelize.define("usuario", {
+export const Usuario = sequelize.define("usuario", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -22,11 +22,11 @@ const Usuario = sequelize.define("usuario", {
         allowNull : false
     },
     nombres : {
-        type : DataTypes.STRING(500),
+        type : DataTypes.STRING(50),
         allowNull : false
     },
     apellidos : {
-        type : DataTypes.STRING(500),
+        type : DataTypes.STRING(50),
         allowNull : false
     },
     tipo_documento : {
@@ -34,7 +34,7 @@ const Usuario = sequelize.define("usuario", {
         allowNull : false
     },
     documento : {
-        type : DataTypes.STRING(15),
+        type : DataTypes.STRING(50),
         allowNull : false
     },
     rol : {
@@ -54,7 +54,7 @@ const Usuario = sequelize.define("usuario", {
     freezeTableName : true
 })
 
-const Universidad = sequelize.define("universidad", {
+export const Universidad = sequelize.define("universidad", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -69,7 +69,7 @@ const Universidad = sequelize.define("universidad", {
     freezeTableName : true
 })
 
-const Carrera = sequelize.define("carrera", {
+export const Carrera = sequelize.define("carrera", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -88,7 +88,7 @@ const Carrera = sequelize.define("carrera", {
     freezeTableName : true
 })
 
-const Curso = sequelize.define("curso", {
+export const Curso = sequelize.define("curso", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -107,7 +107,7 @@ const Curso = sequelize.define("curso", {
     freezeTableName : true
 })
 
-const UsuarioCurso = sequelize.define("usuariocurso", {
+export const UsuarioCurso = sequelize.define("usuariocurso", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -126,7 +126,7 @@ const UsuarioCurso = sequelize.define("usuariocurso", {
     freezeTableName : true
 })
 
-const Horario = sequelize.define("horario", {
+export const Horario = sequelize.define("horario", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -153,7 +153,7 @@ const Horario = sequelize.define("horario", {
     freezeTableName : true
 })
 
-const Cita = sequelize.define("cita", {
+export const Cita = sequelize.define("cita", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -196,7 +196,7 @@ const Cita = sequelize.define("cita", {
     freezeTableName : true
 })
 
-const Calificacion = sequelize.define("calificacion", {
+export const Calificacion = sequelize.define("calificacion", {
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -282,5 +282,3 @@ Calificacion.belongsTo(Cita, {
     foreignKey : "cita_id"
 })
 Cita.hasOne(Calificacion)
-
-module.exports = {Usuario, Universidad, Carrera, Curso, UsuarioCurso, Horario, Cita, Calificacion}

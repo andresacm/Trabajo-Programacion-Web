@@ -1,61 +1,50 @@
-let docentes = [{
-    id: 1,
-    correo: 'example1@gmail.com',
-    contrasenna: '123456',
-    nombres: 'ejemplo',
-    apellidos: 'a',
-    tipoDoc: '',
-    nroDoc: 0,
-    rol: 'docente',
-    foto: '',
-    usuario: 'example',
-    universidad: '',
-    carrera: '',
-    cursos: [],
-    titulo: '',
-    presentacion: '',
-    citas: [1, 2]
-}];
+import { Usuario } from "../db/index.js"
 
-let counter = 1;
-
-const findAll = () =>{
+const findAll = async () =>{
+    const docentes = await Usuario.findAll({
+        where : {
+            rol: "doc"
+        }
+    })
     return docentes;
 }
 
-const create = (docente) =>{
-    counter++;
-    const newDocente = {...docente, id: counter};
-    docentes.push(newDocente);
+const create = async (docente) =>{
+    const nuevoDoc = await Usuario.create(docente)
+    return nuevoDoc;
+}
 
+const findOne = async (id) =>{
+    const docente = await Usuario.findOne({
+        where : {
+            id: id
+        }
+    })
     return docente;
 }
 
-const findOne = (id) =>{
-    const result = docentes.find(x => x.id == id);
-    return result;
+const update = async (docente) =>{
+    const id = docente.id;
+
+    const actDoc = await Usuario.update(docente,{
+        where : {
+            id : id
+        }
+    })
+    
+    return actDoc;
 }
 
-const update = (docente) =>{
-    const index = docentes.findIndex(item => item.id == docente.id);
-    if(index > -1){
-        docentes[index] = docente;
-        return true
-    }
+// const remove = (id) =>{
+//     const index = docentes.findIndex(item => item.id == id)
+//     if(index > -1){
+//         docentes.splice(index, 1)
+//         return true
+//     }
 
-    return false
-}
+//     return false
+// }
 
-const remove = (id) =>{
-    const index = docentes.findIndex(item => item.id == id)
-    if(index > -1){
-        docentes.splice(index, 1)
-        return true
-    }
-
-    return false
-}
-
-const DocenteRepository = { findAll, create, findOne, update, remove}
+const DocenteRepository = { findAll, create, findOne, update}
 
 export default DocenteRepository;
