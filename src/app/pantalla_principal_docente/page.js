@@ -10,14 +10,14 @@ import EstudiantesApi from '../api/estudiantes.js'
 
 const pantallaPDocente = () =>{
 
-    const logInUser = JSON.parse(window.sessionStorage.logInUser);
+    const [logInUser, setLogInUser] = useState({});
     const [citas, setCitas] = useState([]);
     const [estudiantes, setEstudiantes] = useState([]);
     
     const handleOnLoad = async() =>{
         const result = await CitasApi.findAll(1);
-        console.log("result data: "+result.data)
-        setCitas(result.data)
+        console.log("result data: "+result?.data)
+        setCitas(result?.data || [])
 
         //const resultE = await EstudiantesApi.findAll();
         //setEstudiantes(resultE.data)
@@ -39,6 +39,19 @@ const pantallaPDocente = () =>{
 
     useEffect(() =>{
         handleOnLoad();
+        let val;
+        try {
+            val = JSON.parse(window?.sessionStorage?.logInUser || "");
+
+        } catch(err) {
+            val = null;
+        }
+        
+        setLogInUser( val || {
+            "nombres": "John",
+            "apellidos": "Doe",
+            "rol": "Docente"
+          });
     }, [])
     return(
         <div className={styles.container}>
@@ -48,7 +61,7 @@ const pantallaPDocente = () =>{
                 <div className={styles.contenido}>
                     <div className={styles.containerTop}>
                         <div className={styles.containerTitulo}>
-                            <h1 className={styles.titulo}>Bienvenido, Profesor {logInUser.nombres} {logInUser.apellidos}</h1>
+                            <h1 className={styles.titulo}>Bienvenido, Profesor {logInUser?.nombres} {logInUser?.apellidos}</h1>
                         </div>
                     </div>
                     <div className={styles.linea}></div>
